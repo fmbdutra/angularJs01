@@ -16,33 +16,14 @@
                 <h1 class="text-center">Alurapic</h1>
             </div>
               <!-- Imagem 1 -->
-            <div class="panel panel-default">
+            <div class="panel panel-default" ng-repeat="x in fotos"> <!-- No alura está "foto in fotos", mas coloquei x para enteder melhor-->
                 <div class="panel-heading">
-                    <h3 class="panel-title text-center">{{foto.titulo}}</h3>
+                    <h3 class="panel-title text-center">{{x.titulo}}</h3>
                 </div>
                 <div class="panel-body">
-                    <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
+                    <img class="img-responsive center-block" src="{{x.url}}" alt="{{x.titulo}}">
                 </div><!-- fim panel-body -->
             </div>
-             <!-- Imagem 2 -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title text-center">{{foto.titulo}}</h3>
-                </div>
-                <div class="panel-body">
-                    <img class="img-responsive center-block" src="{{foto2.url}}" alt="{{foto2.titulo}}">
-                </div><!-- fim panel-body -->
-            </div>
-            <!-- Imagem 3 -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title text-center">{{foto.titulo}}</h3>
-                </div>
-                <div class="panel-body">
-                    <img class="img-responsive center-block" src="{{foto3.url}}" alt="{{foto3.titulo}}">
-                </div><!-- fim panel-body -->
-            </div>
-
         </div>
     </body>
 </html>
