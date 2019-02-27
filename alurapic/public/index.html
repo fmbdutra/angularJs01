@@ -20,14 +20,14 @@
             <div class="row">
                 <div class="col-md-12">
                 <form>
-                        <input class="form-control" placeholder="filtrar pelo título da foto">
+                        <input class="form-control" placeholder="filtrar pelo título da foto" ng-model="filtro">
                 </form>
                 </div> <!-- fim col-md-12 -->
             </div> <!-- fim row -->
             <br/><br/>
 
             <div class="row">
-                <meu-painel class="col-md-2" ng-repeat="x in fotos" titulo="{{x.titulo}}">
+                <meu-painel class="col-md-2" ng-repeat="x in fotos | filter: filtro" titulo="{{x.titulo}}">
                     <img class="img-responsive center-block" src="{{x.url}}" alt="{{x.titulo}}">
                 </meu-painel>
             </div><!-- fim row -->
