@@ -16,6 +16,7 @@
 <div class="row">
     <!-- Adicionada classe do css/efeito.css -->
     <meu-painel class="col-md-2 painel-animado" ng-repeat="x in fotos | filter: y" titulo="{{x.titulo}}">
-        <img class="img-responsive center-block" src="{{x.url}}" alt="{{x.titulo}}">
+        <!--<img class="img-responsive center-block" src="{{x.url}}" alt="{{x.titulo}}">-->
+        <minha-foto url="{{x.url}}" titulo="{{x.titulo}}"></minha-foto>
     </meu-painel>
 </div><!-- fim row -->
