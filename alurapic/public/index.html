@@ -6,7 +6,9 @@
         <title>Alurapic</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/efeitos.css">
         <script src="js/lib/angular.min.js"></script>
+        <script src="js/lib/angular-animate.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/controllers/fotos-controller.js"></script>
         <script src="js/directives/minhas-diretivas.js"></script>
@@ -27,7 +29,8 @@
             <br/><br/>
 
             <div class="row">
-                <meu-painel class="col-md-2" ng-repeat="x in fotos | filter: filtro" titulo="{{x.titulo}}">
+                <!-- Adicionada classe do css/efeito.css -->
+                <meu-painel class="col-md-2 painel-animado" ng-repeat="x in fotos | filter: filtro" titulo="{{x.titulo}}">
                     <img class="img-responsive center-block" src="{{x.url}}" alt="{{x.titulo}}">
                 </meu-painel>
             </div><!-- fim row -->
