@@ -1,40 +1,32 @@
 angular.module('minhasDiretivas', [])
-    .directive('meuPainel', function() {
+	.directive('meuPainel', function() {
 
-        var ddo = {}; //Directive Definition Object (DDO)
+		var ddo = {};
 
-        ddo.restrict = "AE";
+		ddo.restrict = "AE";
         ddo.transclude = true;
 
-        ddo.scope = {
-            titulo: '@titulo'
 
-            /* 
-            Veja que nele temos @titulo, a sintaxe @ indica que estamos copiando o valor
-            como string do atributo titulo adicionando na diretiva em nossa marcação. 
-            Porém, quando o nome do atributo na diretiva na marcação é igual ao nome da
-            propriedade que guardará o seu valor, podemos deixar apenas @ 
-            */ 
+		ddo.scope = {
+            titulo: '@'
         };
 
         ddo.templateUrl = 'js/directives/meu-painel.html';
 
-        return ddo;
-    })
+		return ddo;
+	})
     .directive('minhaFoto', function() {
 
         var ddo = {};
 
         ddo.restrict = "AE";
-        ddo.transclude = true;
 
         ddo.scope = {
             titulo: '@',
             url: '@'
         };
 
-        ddo.templateUrl = 'js/directives/minha-foto.html';           
-
+        ddo.template = '<img class="img-responsive center-block" src="{{url}}" alt="{{titulo}}">';           
+        
         return ddo;
-
     });
