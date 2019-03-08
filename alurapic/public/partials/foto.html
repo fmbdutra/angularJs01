@@ -34,7 +34,7 @@
             <label>Grupo</label>
             <select name="grupo" ng-model="foto.grupo" class="form-control" required 
             ng-controller="GruposController"
-            ng-options="g._id as g.nome for g in grupos"> <!--g para ver que é um atributo mesmo -->
+            ng-options="g._id as (g.nome | uppercase) for g in grupos"> <!--g para ver que é um atributo mesmo -->
                 <option value="">Escolha um grupo</option>
             </select>
             <span ng-show="formulario.$submitted && formulario.grupo.$error.required" class="form-control alert-danger">
