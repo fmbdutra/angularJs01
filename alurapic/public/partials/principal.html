@@ -35,13 +35,13 @@
 <div class="row">
     <!-- Adicionada classe do css/efeito.css -->
     <meu-painel class="col-md-2 painel-animado" ng-repeat="x in fotos | filter: y" titulo="{{x.titulo}}">
-        <!--<img class="img-responsive center-block" src="{{x.url}}" alt="{{x.titulo}}">-->
         <minha-foto url="{{x.url}}" titulo="{{x.titulo}}"></minha-foto>
     </br/>
         <a class="btn btn-primary btn-block" href="/fotos/edit/{{x._id}}"> <!--x porque foi trocado a váriavel da foto no array-->
-            Editar</a>
-        <button class="btn btn-danger btn-block" ng-click="remover(x)">
-            Remover</button> <!--x porque foi trocado a váriavel da foto no array-->
-
+            Editar
+        </a>
+       
+    <meu-botao-perigo nome="Remover" acao="remover(x)"></meu-botao-perigo> <!--x porque foi trocado a váriavel da foto no array-->
+      
     </meu-painel>
 </div><!-- fim row -->
