@@ -20,6 +20,7 @@ angular.module('alurapic')
             if($routeParams.fotoId){
                 $http.put('/v1/fotos/'+$scope.foto._id, $scope.foto)
                 .success(function(){
+                    $scope.formulario.$setPristine();
                     $scope.mensagem='Foto  '+ $scope.foto.titulo +' foi alterada'
                 })
                 .error(function(erro){
@@ -30,6 +31,7 @@ angular.module('alurapic')
                 $http.post('/v1/fotos', $scope.foto)
                 .success(function() {
                     $scope.foto = {};
+                    $scope.formulario.$setPristine();
                     console.log('Foto adicionada com sucesso');
                     $scope.mensagem = 'Foto cadastrada com sucesso';
                 })
