@@ -1,6 +1,4 @@
-angular.module('alurapic').controller('FotosController', function($scope, $resource) {
-
-    var recursoFoto = $resource('/v1/fotos/:fotoId');
+angular.module('alurapic').controller('FotosController', function($scope, recursoFoto) {
 
     $scope.fotos = [];
     $scope.filtro = '';
@@ -28,7 +26,7 @@ angular.module('alurapic').controller('FotosController', function($scope, $resou
   */
  
     recursoFoto.query(function(fotos){
-        $scope.fotos=fotos;
+        $scope.fotos = fotos;
     }, function(erro){
         console.log(erro);
     });
@@ -49,7 +47,7 @@ angular.module('alurapic').controller('FotosController', function($scope, $resou
         });
         */
        
-        recursoFoto.delete({fotoId:foto._id},function(){
+        recursoFoto.delete({fotoId:foto._id}, function(){
             var indiceDaFoto = $scope.fotos.indexOf(foto);
             $scope.fotos.splice(indiceDaFoto, 1);
             $scope.mensagem = 'Foto ' + foto.titulo + ' removida com sucesso!';
@@ -57,6 +55,5 @@ angular.module('alurapic').controller('FotosController', function($scope, $resou
             console.log(erro);
             $scope.mensagem = 'Não foi possível apagar a foto ' + foto.titulo;
         });
-
     };
 }); 
