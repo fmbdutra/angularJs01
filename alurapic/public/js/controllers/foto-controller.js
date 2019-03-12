@@ -15,33 +15,12 @@ angular.module('alurapic')
 
     $scope.submeter = function() {
         if ($scope.formulario.$valid) {
-            /*
-            if($routeParams.fotoId) {
-                
-                recursoFoto.update({fotoId: $scope.foto._id},
-                    $scope.foto, function(){
-                    $scope.mensagem = 'Foto  '+ $scope.foto.titulo +' foi alterada';
-                }, function(erro){
-                    console.log(erro);
-                    $scope.mensagem = 'Não foi possível alterar';
-                });
-            } else {
-                recursoFoto.save($scope.foto, function() {
-                    $scope.foto = {};
-                    $scope.formulario.$setPristine();
-                    $scope.mensagem = 'Foto cadastrada com sucesso';
-                }, function(erro){
-                    console.log(erro);
-                    $scope.mensagem = 'Não foi possível cadastrar a foto';
-                });            
-            }*/
             cadastroDeFotos.cadastrar($scope.foto)
             .then(function(dados){
                 $scope.formulario.$setPristine();
                 $scope.mensagem = dados.mensagem;
-                if (dados.inclusao) {
-                    $scope.foto = {};
-                }
+                if (dados.inclusao) $scope.foto = {};
+                    $scope.focado = true;
             })
             .catch(function(erro){
                 $scope.mensagem = erro.mensagem;
