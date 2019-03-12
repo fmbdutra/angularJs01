@@ -37,8 +37,11 @@ angular.module('alurapic')
             }*/
             cadastroDeFotos.cadastrar($scope.foto)
             .then(function(dados){
+                $scope.formulario.$setPristine();
                 $scope.mensagem = dados.mensagem;
-                if (dados.inclusao) $scope.foto = {};
+                if (dados.inclusao) {
+                    $scope.foto = {};
+                }
             })
             .catch(function(erro){
                 $scope.mensagem = erro.mensagem;

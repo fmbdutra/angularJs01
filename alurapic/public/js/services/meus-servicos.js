@@ -12,10 +12,10 @@ angular.module('meusServicos',['ngResource'])
             return $q(function(resolve, reject){
 
                 if(foto._id){
-                    recursoFoto.update({fotoId: foto._id}
-                        ,foto,function(){
-                            resolve({mensagem: 'Foto' + foto.titulo+' atualizada com sucesso!',
-                            inclusao: false
+                    recursoFoto.update({fotoId: foto._id}, foto, function(){
+                            resolve({
+                                mensagem: 'Foto '+foto.titulo+' atualizada com sucesso!',
+                                inclusao: false
                             });
                         }, function(erro){
                             console.log(erro);
@@ -32,7 +32,7 @@ angular.module('meusServicos',['ngResource'])
                     }, function(erro){
                         console.log(erro);
                         reject({
-                            mensagem: 'Não foi possível incluir a foto'+foto.titulo
+                            mensagem: 'Não foi possível incluir a foto '+foto.titulo
                         });
                     });
                 }
