@@ -20,8 +20,7 @@ angular.module('alurapic')
                 $scope.formulario.$setPristine();
                 $scope.mensagem = dados.mensagem;
                 if (dados.inclusao) $scope.foto = {};
-                    //$scope.focado = true;
-                    $scope.$broadcast('fotoCadastrada');
+                    //$scope.$broadcast('fotoCadastrada');
             })
             .catch(function(erro){
                 $scope.mensagem = erro.mensagem;
