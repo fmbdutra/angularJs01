@@ -60,11 +60,6 @@ angular.module('minhasDiretivas', [])
             focado: '='
         };
         ddo.link = function(scope, element){
-            /*scope.$watch('focado', function(){
-                if (scope.focado){
-                    element[0].focus();
-                    scope.focado = false;
-                }*/
             scope.$on('fotoCadastrada', function(){
                 element[0].focus();
             });

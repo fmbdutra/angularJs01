@@ -1,5 +1,8 @@
 angular.module('alurapic')
-.controller('FotoController', ['$scope', 'recursoFoto', '$routeParams', 'cadastroDeFotos'] ,function($scope, recursoFoto, $routeParams, cadastroDeFotos) {
+.controller('FotoController', 
+// Caso minificação, descomente essa linha
+//['$scope', 'recursoFoto', '$routeParams', 'cadastroDeFotos'] ,
+function($scope, recursoFoto, $routeParams, cadastroDeFotos) {
 
     $scope.foto = {};
     $scope.mensagem = '';
@@ -19,8 +22,9 @@ angular.module('alurapic')
             .then(function(dados){
                 $scope.formulario.$setPristine();
                 $scope.mensagem = dados.mensagem;
-                if (dados.inclusao) $scope.foto = {};
-                    //$scope.$broadcast('fotoCadastrada');
+                if (dados.inclusao) {
+                    $scope.foto = {};
+                }
             })
             .catch(function(erro){
                 $scope.mensagem = erro.mensagem;
